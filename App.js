@@ -6,6 +6,10 @@ import {
 } from 'react-native'
 // import DatePicker from 'react-native-datepicker'
 //
+import { Provider } from 'react-redux';
+// +++
+import { store } from './app/configs/store';
+//
 import StatusBar from './app/components/StatusBar';
 import TodoList from './app/components/TodoList';
 //
@@ -19,10 +23,12 @@ export default class App extends Component {
 
   render(){
     return (
-      <View style={stylesGlobal.body}>
-        <StatusBar />
-        <TodoList />
-      </View>
+      <Provider store={store}>
+        <View style={stylesGlobal.body}>
+          <StatusBar />
+          <TodoList />
+        </View>
+      </Provider>
     );
   }
 }
