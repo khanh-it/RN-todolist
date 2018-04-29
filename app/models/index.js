@@ -1,9 +1,5 @@
 /**
  * 
  */
-import todoModels from './todo';
+export * from './todo';
 
-// export default
-export default {
-    ...todoModels
-};

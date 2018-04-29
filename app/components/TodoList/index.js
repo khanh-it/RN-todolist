@@ -9,7 +9,6 @@ import {
     todoDone,
     todoDel
 } from '../../actions';
-
 //
 import TodoListComp from './TodoListComp';
 //
@@ -26,10 +25,16 @@ function visibleTodos(todos, filter) {
  * @class TodoList
  */
 const TodoList = connect(
-    ({ todos, filter }) => ({
-        todos: visibleTodos(todos, filter)
-    }),
+    ({ todos, filter }) => {
+        console.log('todos: ', todos);
+        return {
+            todos: visibleTodos(todos, filter)
+        };
+    },
     (dispatch) => {
+        setTimeout(() => {
+            // dispatch(todoAdd(new Date().getTime()));
+        }, 1000);
         return {
             /**
              * 

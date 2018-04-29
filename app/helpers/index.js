@@ -7,5 +7,5 @@
  * @return {String}
  */
 export function uniqueID() {
-    return new String(Date().now() + Math.random()).toString();
+    return new String(new Date().getTime() + Math.random()).toString();
 }

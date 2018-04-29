@@ -1,144 +1,159 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:1:1-32:12
-INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:1:1-32:12
-INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:1:1-32:12
-INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:1:1-32:12
-MERGED from [:react-native-fetch-blob] D:\khanhdtp\Projects\RN\rn_TodoList\node_modules\react-native-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-14:12
-MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\f40952ff531babe569a5b4392245ea73\AndroidManifest.xml:2:1-15:12
-MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\fd33428ecd3c280b96d63a868daac450\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:support-v4:23.0.1] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\support-v4-23.0.1.aar\c2fccd2f22e71b593fd5bad4f4605375\AndroidManifest.xml:17:1-24:12
-MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\textlayoutbuilder-1.0.0.aar\9640153194a077a3e522efc69d5c9450\AndroidManifest.xml:10:1-18:12
-MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\fresco-1.3.0.aar\f75ef20da599431c098ef8fbf509691c\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.3.0.aar\1a86b6196c13925c861a1163736fc5bd\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\638031dd69e0b23e5ae4cfac867c0415\AndroidManifest.xml:1:1-4:12
-MERGED from [org.webkit:android-jsc:r174650] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\6687a69c370bc929f3def465572b1f4b\AndroidManifest.xml:1:1-3:12
-MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\62a8ddf327ec004078d477e40a6061c3\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\aaad43f6fb7275b3bbfc835da20cf0be\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.3.0.aar\5a8d13f3ccdc315f857093e0ab83b473\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\fbcore-1.3.0.aar\847e6a41367ec9e4194838e20be50e2a\AndroidManifest.xml:2:1-9:12
-INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:1:1-32:12
-INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:1:1-32:12
-INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:1:1-32:12
+ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:1:1-27:12
+INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:1:1-27:12
+INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:1:1-27:12
+INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:1:1-27:12
+MERGED from [:react-native-fetch-blob] D:\khanhdtp\Projects\RN\rn_todolist\node_modules\react-native-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-14:12
+MERGED from [:react-native-smart-splashscreen] D:\khanhdtp\Projects\RN\rn_todolist\node_modules\react-native-smart-splash-screen\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\a1c252c39c558c27ea349a7d65e03a0c\AndroidManifest.xml:2:1-15:12
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\18f26775da4101da487193a79f646631\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\77a897cf779f4984638a4861d18ff2ff\AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\82aa694a211e12637017698949029d3a\AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\1c56bead2f8cdb610fbb397435c9f01a\AndroidManifest.xml:17:1-24:12
+MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\textlayoutbuilder-1.0.0.aar\f8a7ccd032dbc3fff2cf00b21998013e\AndroidManifest.xml:10:1-18:12
+MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\fresco-1.3.0.aar\6e78d8fba8face67663cccf5024cf970\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.3.0.aar\cf2770571ee738530352dfae8ed5ec3b\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\852876eaaedf0d3524650d2dd102fed0\AndroidManifest.xml:1:1-4:12
+MERGED from [org.webkit:android-jsc:r174650] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\30e1b8b0420fa16f58ede9467985b7ca\AndroidManifest.xml:1:1-3:12
+MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\327d85777fad7a99171950b19f9c21b9\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\1b103174a7d828f12130cd31ff163084\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.3.0.aar\bce420c41acc378c1d455069f790b148\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\fbcore-1.3.0.aar\23f6beea53d835346674f81567573474\AndroidManifest.xml:2:1-9:12
+INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:1:1-27:12
+INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:1:1-27:12
+INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:1:1-27:12
 	package
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:2:5-33
-		INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml
-		INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:1:70-98
+		INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:1:1-32:12
-		INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:1:1-27:12
+		INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:1:1-32:12
-		INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:1:1-27:12
+		INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:1:11-69
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:4:5-67
+ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:3:5-67
 	android:name
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:4:22-64
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:3:22-64
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:5:5-81
+ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:4:5-81
 	android:name
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:5:22-78
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:4:22-78
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
-ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:8:5-77
-MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\f40952ff531babe569a5b4392245ea73\AndroidManifest.xml:11:5-78
-MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\f40952ff531babe569a5b4392245ea73\AndroidManifest.xml:11:5-78
+ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:5:5-77
+MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\a1c252c39c558c27ea349a7d65e03a0c\AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\a1c252c39c558c27ea349a7d65e03a0c\AndroidManifest.xml:11:5-78
 	android:name
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:8:22-75
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:5:22-75
 application
-ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:10:5-30:19
-MERGED from [:react-native-fetch-blob] D:\khanhdtp\Projects\RN\rn_TodoList\node_modules\react-native-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-12:19
-MERGED from [:react-native-fetch-blob] D:\khanhdtp\Projects\RN\rn_TodoList\node_modules\react-native-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-12:19
-MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\f40952ff531babe569a5b4392245ea73\AndroidManifest.xml:13:5-20
-MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\f40952ff531babe569a5b4392245ea73\AndroidManifest.xml:13:5-20
-MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\fd33428ecd3c280b96d63a868daac450\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\fd33428ecd3c280b96d63a868daac450\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.0.1] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\support-v4-23.0.1.aar\c2fccd2f22e71b593fd5bad4f4605375\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.0.1] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\support-v4-23.0.1.aar\c2fccd2f22e71b593fd5bad4f4605375\AndroidManifest.xml:22:5-20
-MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\638031dd69e0b23e5ae4cfac867c0415\AndroidManifest.xml:3:3-17
-MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\638031dd69e0b23e5ae4cfac867c0415\AndroidManifest.xml:3:3-17
-MERGED from [org.webkit:android-jsc:r174650] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\6687a69c370bc929f3def465572b1f4b\AndroidManifest.xml:2:3-17
-MERGED from [org.webkit:android-jsc:r174650] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\6687a69c370bc929f3def465572b1f4b\AndroidManifest.xml:2:3-17
+ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:7:5-25:19
+MERGED from [:react-native-fetch-blob] D:\khanhdtp\Projects\RN\rn_todolist\node_modules\react-native-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-12:19
+MERGED from [:react-native-fetch-blob] D:\khanhdtp\Projects\RN\rn_todolist\node_modules\react-native-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-12:19
+MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\a1c252c39c558c27ea349a7d65e03a0c\AndroidManifest.xml:13:5-20
+MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\a1c252c39c558c27ea349a7d65e03a0c\AndroidManifest.xml:13:5-20
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\18f26775da4101da487193a79f646631\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\18f26775da4101da487193a79f646631\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\77a897cf779f4984638a4861d18ff2ff\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\77a897cf779f4984638a4861d18ff2ff\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\82aa694a211e12637017698949029d3a\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\82aa694a211e12637017698949029d3a\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\1c56bead2f8cdb610fbb397435c9f01a\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\1c56bead2f8cdb610fbb397435c9f01a\AndroidManifest.xml:22:5-20
+MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\852876eaaedf0d3524650d2dd102fed0\AndroidManifest.xml:3:3-17
+MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\852876eaaedf0d3524650d2dd102fed0\AndroidManifest.xml:3:3-17
+MERGED from [org.webkit:android-jsc:r174650] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\30e1b8b0420fa16f58ede9467985b7ca\AndroidManifest.xml:2:3-17
+MERGED from [org.webkit:android-jsc:r174650] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\30e1b8b0420fa16f58ede9467985b7ca\AndroidManifest.xml:2:3-17
 	android:label
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:12:7-39
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:9:7-39
 	android:icon
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:13:7-41
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:10:7-41
 	android:allowBackup
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:14:7-34
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:11:7-34
 	android:theme
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:15:7-38
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:12:7-38
 	android:name
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:11:7-38
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:8:7-38
 activity#com.simpletodolist.MainActivity
-ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:16:7-28:18
+ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:13:7-23:18
 	android:label
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:18:9-41
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:15:9-41
 	android:windowSoftInputMode
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:20:9-51
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:17:9-51
 	android:configChanges
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:19:9-79
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:16:9-79
 	android:name
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:17:9-37
-intent-filter#action:name:android.intent.action.DOWNLOAD_COMPLETE+action:name:android.intent.action.DOWNLOAD_COMPLETE+action:name:android.intent.action.DOWNLOAD_COMPLETE+action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:21:9-27:25
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:14:9-37
+intent-filter#action:name:android.intent.action.DOWNLOAD_COMPLETE+action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:18:9-22:25
 action#android.intent.action.MAIN
-ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:22:13-65
+ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:19:13-65
 	android:name
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:22:21-62
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:19:21-62
 category#android.intent.category.LAUNCHER
-ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:23:13-73
+ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:20:13-73
 	android:name
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:23:23-70
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:20:23-70
 action#android.intent.action.DOWNLOAD_COMPLETE
-ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:24:6-70
+ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:21:4-68
 	android:name
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:24:14-68
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:21:12-66
 activity#com.facebook.react.devsupport.DevSettingsActivity
-ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:29:7-84
+ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:24:7-84
 	android:name
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:29:17-81
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:24:17-81
 uses-sdk
-INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml
-INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml
-MERGED from [:react-native-fetch-blob] D:\khanhdtp\Projects\RN\rn_TodoList\node_modules\react-native-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-fetch-blob] D:\khanhdtp\Projects\RN\rn_TodoList\node_modules\react-native-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\f40952ff531babe569a5b4392245ea73\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\f40952ff531babe569a5b4392245ea73\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\fd33428ecd3c280b96d63a868daac450\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\fd33428ecd3c280b96d63a868daac450\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.0.1] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\support-v4-23.0.1.aar\c2fccd2f22e71b593fd5bad4f4605375\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.0.1] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\support-v4-23.0.1.aar\c2fccd2f22e71b593fd5bad4f4605375\AndroidManifest.xml:20:5-43
-MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\textlayoutbuilder-1.0.0.aar\9640153194a077a3e522efc69d5c9450\AndroidManifest.xml:14:5-16:41
-MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\textlayoutbuilder-1.0.0.aar\9640153194a077a3e522efc69d5c9450\AndroidManifest.xml:14:5-16:41
-MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\fresco-1.3.0.aar\f75ef20da599431c098ef8fbf509691c\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\fresco-1.3.0.aar\f75ef20da599431c098ef8fbf509691c\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.3.0.aar\1a86b6196c13925c861a1163736fc5bd\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.3.0.aar\1a86b6196c13925c861a1163736fc5bd\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\638031dd69e0b23e5ae4cfac867c0415\AndroidManifest.xml:2:3-70
-MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\638031dd69e0b23e5ae4cfac867c0415\AndroidManifest.xml:2:3-70
-MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\62a8ddf327ec004078d477e40a6061c3\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\62a8ddf327ec004078d477e40a6061c3\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\aaad43f6fb7275b3bbfc835da20cf0be\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\aaad43f6fb7275b3bbfc835da20cf0be\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.3.0.aar\5a8d13f3ccdc315f857093e0ab83b473\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.3.0.aar\5a8d13f3ccdc315f857093e0ab83b473\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\fbcore-1.3.0.aar\847e6a41367ec9e4194838e20be50e2a\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\Do Truong Phi Khanh\.gradle\caches\transforms-1\files-1.1\fbcore-1.3.0.aar\847e6a41367ec9e4194838e20be50e2a\AndroidManifest.xml:5:5-7:41
-INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml
-INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml
+MERGED from [:react-native-fetch-blob] D:\khanhdtp\Projects\RN\rn_todolist\node_modules\react-native-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-fetch-blob] D:\khanhdtp\Projects\RN\rn_todolist\node_modules\react-native-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-smart-splashscreen] D:\khanhdtp\Projects\RN\rn_todolist\node_modules\react-native-smart-splash-screen\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-smart-splashscreen] D:\khanhdtp\Projects\RN\rn_todolist\node_modules\react-native-smart-splash-screen\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\a1c252c39c558c27ea349a7d65e03a0c\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\a1c252c39c558c27ea349a7d65e03a0c\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\18f26775da4101da487193a79f646631\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\18f26775da4101da487193a79f646631\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\77a897cf779f4984638a4861d18ff2ff\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\77a897cf779f4984638a4861d18ff2ff\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\82aa694a211e12637017698949029d3a\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\82aa694a211e12637017698949029d3a\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\1c56bead2f8cdb610fbb397435c9f01a\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\1c56bead2f8cdb610fbb397435c9f01a\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\textlayoutbuilder-1.0.0.aar\f8a7ccd032dbc3fff2cf00b21998013e\AndroidManifest.xml:14:5-16:41
+MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\textlayoutbuilder-1.0.0.aar\f8a7ccd032dbc3fff2cf00b21998013e\AndroidManifest.xml:14:5-16:41
+MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\fresco-1.3.0.aar\6e78d8fba8face67663cccf5024cf970\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\fresco-1.3.0.aar\6e78d8fba8face67663cccf5024cf970\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.3.0.aar\cf2770571ee738530352dfae8ed5ec3b\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.3.0.aar\cf2770571ee738530352dfae8ed5ec3b\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\852876eaaedf0d3524650d2dd102fed0\AndroidManifest.xml:2:3-70
+MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\852876eaaedf0d3524650d2dd102fed0\AndroidManifest.xml:2:3-70
+MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\327d85777fad7a99171950b19f9c21b9\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\327d85777fad7a99171950b19f9c21b9\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\1b103174a7d828f12130cd31ff163084\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\1b103174a7d828f12130cd31ff163084\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.3.0.aar\bce420c41acc378c1d455069f790b148\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.3.0.aar\bce420c41acc378c1d455069f790b148\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\fbcore-1.3.0.aar\23f6beea53d835346674f81567573474\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\fbcore-1.3.0.aar\23f6beea53d835346674f81567573474\AndroidManifest.xml:5:5-7:41
+INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:23.4.0] C:\Users\KhanhDTP\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\18f26775da4101da487193a79f646631\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml
-		INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml
-		INJECTED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+IMPLIED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:1:1-27:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from D:\khanhdtp\Projects\RN\rn_TodoList\android\app\src\main\AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
+IMPLIED from D:\khanhdtp\Projects\RN\rn_todolist\android\app\src\main\AndroidManifest.xml:1:1-27:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE

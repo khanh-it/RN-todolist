@@ -8,6 +8,8 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+// https://github.com/react-native-component/react-native-smart-splash-screen
+import com.reactnativecomponent.splashscreen.RCTSplashScreenPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,7 +26,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-          new RNFetchBlobPackage()
+          new RNFetchBlobPackage(),
+          new RCTSplashScreenPackage()
       );
     }
 
