@@ -3,12 +3,16 @@
  */
 import { combineReducers } from 'redux';
 //
-import todos from './todos'
-import filter from './filter'
+import filter from './filter';
+import todos from './todos';
+import users from './users';
+import auth from './auth';
 
 // export default
 const reducers = combineReducers({
+    filter,
     todos,
-    filter
+    users,
+    auth
 });
 export default reducers;
