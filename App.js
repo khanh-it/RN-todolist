@@ -6,6 +6,8 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { SwitchNavigator } from 'react-navigation';
 // +++
 import { store, persistor } from './app/configs/store';
+// +++
+import crypto from './app/polyfills/crypto';
 //
 import HomeScreen from './app/components/HomeScreen';
 import AuthVerifyScreen from './app/components/AuthVerifyScreen';
@@ -32,6 +34,14 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {}
+  }
+
+  componentDidMount() {
+    const hash = crypto.createHmac('sha256', '12345679')
+      .update('abcdefg')
+      .digest('hex')
+    ;
+    alert(hash);
   }
 
   render() {
