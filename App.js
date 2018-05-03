@@ -7,7 +7,8 @@ import { SwitchNavigator } from 'react-navigation';
 // +++
 import { store, persistor } from './app/configs/store';
 // +++
-import crypto from './app/polyfills/crypto';
+// import crypto from './app/polyfills/crypto';
+import crypto from 'crypto';
 //
 import HomeScreen from './app/components/HomeScreen';
 import AuthVerifyScreen from './app/components/AuthVerifyScreen';
