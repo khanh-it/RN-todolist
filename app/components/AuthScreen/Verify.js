@@ -21,7 +21,7 @@ export class AuthVerifyComponent extends Component {
         let delay = 256;
         SplashScreen.close({ animationType, duration, delay });
         // Verify auth...
-        setTimeout(this._verifyAuth, duration + delay);
+        setTimeout(this._verifyAuth, 0 /* duration + delay */);
     }
 
     /**
@@ -29,7 +29,7 @@ export class AuthVerifyComponent extends Component {
      * @memberof AuthVerifyComponent
      */
     _verifyAuth() {
-        this.props.navigation.navigate(this.props.auth ? '/' : '/auth/login');
+        this.props.navigation.navigate(this.props.auth ? '/' : '/auth');
     }
   
     render() {

@@ -6,12 +6,11 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { SwitchNavigator } from 'react-navigation';
 // +++
 import { store, persistor } from './app/configs/store';
-// +++
-// import crypto from './app/polyfills/crypto';
-import crypto from 'crypto';
+//
+import { Root } from 'native-base';
 //
 import HomeScreen from './app/components/HomeScreen';
-import AuthVerifyScreen from './app/components/AuthVerifyScreen';
+import AuthScreenVerify from './app/components/AuthScreen/Verify';
 import AuthScreen from './app/components/AuthScreen';
 
 /**
@@ -20,8 +19,8 @@ import AuthScreen from './app/components/AuthScreen';
 const AppRootComponent = SwitchNavigator(
   {
     '/': HomeScreen,
-    '/auth/verify': AuthVerifyScreen,
-    '/auth/login': AuthScreen,
+    '/auth/verify': AuthScreenVerify,
+    '/auth': AuthScreen,
   } /*  */,
   {
     initialRouteName: '/auth/verify',
@@ -37,21 +36,17 @@ export default class App extends Component {
     this.state = {}
   }
 
-  componentDidMount() {
-    const hash = crypto.createHmac('sha256', '12345679')
-      .update('abcdefg')
-      .digest('hex')
-    ;
-    alert(hash);
-  }
+  componentDidMount() {}
 
   render() {
     return (
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <AppRootComponent />
-        </PersistGate>
-      </Provider>
+      <Root>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <AppRootComponent />
+          </PersistGate>
+        </Provider>
+      </Root>
     );
   }
 }

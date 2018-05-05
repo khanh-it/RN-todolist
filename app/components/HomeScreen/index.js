@@ -1,17 +1,25 @@
 import React, { Component } from "react";
-import HomeScreen from "./HomeScreen.js";
-import MainScreenNavigator from "../ChatScreen/index.js";
-import Profile from "../ProfileScreen/index.js";
-import SideBar from "../SideBar/SideBar.js";
 import { DrawerNavigator } from "react-navigation";
-const HomeScreenRouter = DrawerNavigator(
+//
+import TodoList from "../TodoList";
+import ProfileScreen from "../ProfileScreen";
+import SideBar from "../SideBar";
+
+/**
+ * @class HomeScreen
+ */
+const HomeScreen  = DrawerNavigator(
   {
-    Home: { screen: HomeScreen },
-    Chat: { screen: MainScreenNavigator },
-    Profile: { screen: Profile }
+    '/':  {
+      screen: TodoList
+    },
+    '/profile':  {
+      screen: ProfileScreen
+    }
   },
   {
-    contentComponent: props => <SideBar {...props} />
+    contentComponent: (props) => (<SideBar {...props} />)
   }
 );
-export default HomeScreenRouter;
+export default HomeScreen;
+

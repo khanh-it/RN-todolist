@@ -12,7 +12,7 @@ import {
 //
 import TodoListComp from './TodoListComp';
 //
-import styles from '../styles';
+import styles from './styles';
 
 /**
  * 
@@ -32,27 +32,24 @@ const TodoList = connect(
         };
     },
     (dispatch) => {
-        setTimeout(() => {
-            // dispatch(todoAdd(new Date().getTime()));
-        }, 1000);
         return {
             /**
              * 
              */
-            _todoAdd: function _todoAdd(text, id = null) {
+            todoAdd: (text, id = null) => {
                 dispatch(todoAdd(text, id));
             },
             /**
              * 
              */
-            _todoDone: function _todoDone(id, done) {
+            todoDone: (id, done) => {
                 dispatch(todoDone(id, done));
             },
             /**
              * 
              * @param {*} todo 
              */
-            _todoDel: function _todoDel(id) {
+            todoDel: (id)  => {
                 dispatch(todoDel(id));
             }
         };

@@ -1,3 +1,8 @@
+//
+import Lang from './helpers/lang';
+//
+export * from './helpers/native-base';
+
 /**
  * Define project's global 
  */
@@ -11,7 +16,8 @@ const $global = {
 
 // public?
 Object.assign(global, {
-    projectGlobal: $global
+    projectGlobal: $global,
+    Lang
 });
 
 // export
