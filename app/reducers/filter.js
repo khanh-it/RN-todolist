@@ -23,9 +23,9 @@ export default function filter(state = FILTER_MODE_ALL, action) {
     switch (action.type) {
         // FILTER_SET
         case FILTER_SET:
-            if (action.filter && modes.indexOf(action.filter) >= 0) {
+            // if (action.filter && modes.indexOf(action.filter) >= 0) {
                 state = action.filter;
-            }
+            // }
         break;
         default:
     }

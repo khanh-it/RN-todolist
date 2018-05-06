@@ -34,7 +34,7 @@ let styles = StyleSheet.create({
     alignItems: 'center'
   },
   form: {
-    minWidth: 360,
+    minWidth: 320,
     width: '80%',
     maxWidth: '96%',
   },

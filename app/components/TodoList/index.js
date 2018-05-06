@@ -7,7 +7,8 @@ import {
 import {
     todoAdd,
     todoDone,
-    todoDel
+    todoDel,
+    filterSet
 } from '../../actions';
 //
 import TodoListComp from './TodoListComp';
@@ -26,9 +27,10 @@ function visibleTodos(todos, filter) {
  */
 const TodoList = connect(
     ({ todos, filter }) => {
-        console.log('todos: ', todos);
+        // console.log('todos: ', todos);
         return {
-            todos: visibleTodos(todos, filter)
+            todos: visibleTodos(todos, filter),
+            filter
         };
     },
     (dispatch) => {
@@ -51,6 +53,13 @@ const TodoList = connect(
              */
             todoDel: (id)  => {
                 dispatch(todoDel(id));
+            },
+            /**
+             * 
+             * @param {*} todo 
+             */
+            todoFilter: (filter)  => {
+                dispatch(filterSet(filter));
             }
         };
     },

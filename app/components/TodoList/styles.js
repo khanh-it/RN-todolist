@@ -7,19 +7,33 @@ import {
  */
 const styles = StyleSheet.create({
     content: {
-        // backgroundColor: 'rgb(230, 230, 230)'
-    },
-    form: {
-        backgroundColor: 'white',
-        padding: 12,
-        marginBottom: 12
     },
     list: {
         // backgroundColor: 'white',
         // padding: 6
     },
     listItem: {
-        // marginBottom: 2
+        paddingLeft: 16
+    },
+    listItemTextDone: {
+        textDecorationLine: 'line-through'
+    },
+    // buttons
+    btnSearchBar: {
+        paddingTop: 0,
+        paddingBottom: 0,
+        height: '100%'
+    },
+    btnList: {
+        paddingTop: 0,
+        paddingBottom: 0,
+        height: 'auto'
+    },
+    // #end.buttons
+    // Icons
+    iconList: {
+        marginRight: 0
     }
+    // #end.Icons
 });
 export default styles;

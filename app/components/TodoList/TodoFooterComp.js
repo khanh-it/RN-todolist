@@ -5,7 +5,8 @@ import {
     FooterTab,
     Text,
     Button,
-    Icon
+    Icon,
+    Badge
 } from "native-base";
 
 //
@@ -19,18 +20,7 @@ export default class TodoFooterComp extends PureComponent {
         super(props)
 
         // init state
-        this.state = {
-            count: isNaN(props.count) ? 0 : props.count,
-            mode: isNaN(props.mode) ? 0 : props.mode // 0 | 1 | 2 | 3
-        }
-    }
-
-    componentWillReceiveProps(props) {
-        let state = {
-            count: isNaN(props.count) ? 0 : props.count,
-            mode: isNaN(props.mode) ? 0 : props.mode // 0 | 1 | 2 | 3
-        }
-        this.setState(state);
+        this.state = {}
     }
 
     /**
@@ -54,28 +44,38 @@ export default class TodoFooterComp extends PureComponent {
      * 
      */
     render() {
+        let { counts, filter } = this.props;
         return (
             <Footer style={styles.footer}>
                 <FooterTab>
-                    <Button>
-                        <Text>{this.state.count} item(s) left</Text>
-                    </Button>
                     <Button
-                        active={(this.state.mode === 1)}
+                        badge
+                        vertical
+                        active={(filter === 1)}
                         onPress={() => this.handleSwitchMode(1)}
                     >
+                        <Badge><Text>{counts[1]}</Text></Badge>
+                        <Icon name="apps" />
                         <Text>All</Text>
                     </Button>
                     <Button
-                        active={(this.state.mode === 2)}
+                        badge
+                        vertical
+                        active={(filter === 2)}
                         onPress={() => this.handleSwitchMode(2)}
                     >
+                        <Badge><Text>{counts[2]}</Text></Badge>
+                        <Icon name="apps" />
                         <Text>Active</Text>
                     </Button>
                     <Button
-                        active={(this.state.mode === 3)}
+                        badge
+                        vertical
+                        active={(filter === 3)}
                         onPress={() => this.handleSwitchMode(3)}
                     >
+                        <Badge><Text>{counts[3]}</Text></Badge>
+                        <Icon name="apps" />
                         <Text>Completed</Text>
                     </Button>
                 </FooterTab>
