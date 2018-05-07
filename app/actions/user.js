@@ -9,6 +9,9 @@ import {
     AUTH_SET
 } from './constants';
 
+//
+import * as helpers from '../helpers';
+
 /**
  * 
  */
@@ -40,6 +43,6 @@ export function userEdit(id, user) {
  * @return {Object}
  */
 export function authSet(auth) {
-    auth = ('[object Object]' === Object.prototype.toString.call(auth)) ? auth : null;
+    auth = helpers.isPlainObject(auth, null);
     return { type: AUTH_SET, auth };
 }

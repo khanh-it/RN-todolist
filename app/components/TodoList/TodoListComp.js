@@ -18,7 +18,6 @@ import TodoHeaderComp from './TodoHeaderComp';
 import TodoFooterComp from './TodoFooterComp';
 //
 import styles from './styles';
-import { count } from 'locutus/php/array';
 
 /**
  * @class TodoListComponent

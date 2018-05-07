@@ -28,23 +28,49 @@ import {
 export default class UserMapper {
     /**
      * 
+     * @param {*} user 
+     */
+    static userSignIn(user) {
+        return store.dispatch(authSet(user));
+    }
+
+    /**
+     * 
+     * @param {*} user 
+     */
+    static userSignOut() {
+        return store.dispatch(authSet());
+    }
+
+    /**
+     * 
      * 
      * @static
      * @memberof UserMapper
      */
-    static findUser4Login(username, password) {
-        let pass = encryptPassword(password);
-        //
-        let { users } = store.getState();
+    static findUser4Login(username, password, options = {}) {
         //
         let foundUser = null;
-        for (let i = 0; i < users.length; i++) {
-            if ((username === users[i].username)
-                && (pass === users[i].password)
-            ) {
-                foundUser = users[i];
-                break;
+        try {
+            let pass = encryptPassword(password);
+            //
+            let { users } = store.getState();
+            console.log('users: ', users);
+            for (let i = 0; i < users.length; i++) {
+                if ((username === users[i].username)
+                    && (pass === users[i].password)
+                ) {
+                    foundUser = users[i];
+                    break;
+                }
             }
+        } catch (err) {
+            console.log('findUser4Login err: ', err);
+        }
+        // Auto login?
+        let { autoSignIn } = (options || {});
+        if (foundUser && (true === autoSignIn)) {
+            UserMapper.userSignIn(foundUser);
         }
         return foundUser;
     }
@@ -61,12 +87,17 @@ export default class UserMapper {
     static addUser(data, options = {}) {
         try {
             let newUser = new mUser(data);
+            // Verify
+            // +++
+            // Format data
+            // +++ password
+            newUser.password = encryptPassword(newUser.password);
             // Verify user data...
             store.dispatch(userAdd(newUser));
             // Auto login?
-            let { autoLogin } = (options || {});
-            if (true === autoLogin) {
-                store.dispatch(authSet(newUser));
+            let { autoSignIn } = (options || {});
+            if (true === autoSignIn) {
+                UserMapper.userSignIn(newUser);
             }
         } catch (err) {
             return err;

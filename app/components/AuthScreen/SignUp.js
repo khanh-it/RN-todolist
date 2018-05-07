@@ -32,10 +32,13 @@ let styles = StyleSheet.create({
   content: {
     // borderWidth: 1,
     // borderColor: 'red',
-    flex: 1,
-    flexDirection: 'row',
+  },
+  contentContainer: {
+    // borderWidth: 1,
+    // borderColor: 'blue',
+    flexGrow: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   form: {
     minWidth: 320,
@@ -53,9 +56,7 @@ export default class SignUp extends Component {
     constructor() {
       super();
       // Init state
-      this.state = {
-        isReady: false
-      };
+      this.state = {};
       // Bind method(s)
       this.onSubmit = this.onSubmit.bind(this);
     }
@@ -89,6 +90,10 @@ export default class SignUp extends Component {
       };
     }
 
+    /**
+     * 
+     * @param {*} evt 
+     */
     onSubmit(evt) {
       // Verify input...
       let data = this._data;
@@ -104,7 +109,7 @@ export default class SignUp extends Component {
       }
       // Add new user + auto login
       let err = UserMapper.addUser(data, {
-        autoLogin: true // auto login if success
+        autoSignIn: true // auto login if success
       });
       if (err) {
         Toast.showDanger(global.Lang._('Sign up has failed, please try again!'));
@@ -118,7 +123,7 @@ export default class SignUp extends Component {
     render() {
       return (
         <Container>
-          <View style={[styles.content]}>
+          <Content style={[styles.content]} contentContainerStyle={[styles.contentContainer]}>
             <Form style={[styles.form]}>
               <Item regular>
                 <Input
@@ -152,10 +157,10 @@ export default class SignUp extends Component {
                 style={[styles.btnSubmit]}
                 onPress={this.onSubmit}
               >
-                <Text>SIGN UP</Text>
+                <Text>{global.Lang._('SIGN UP')}</Text>
               </Button>
             </Form>
-          </View>
+          </Content>
         </Container>
       );
     }

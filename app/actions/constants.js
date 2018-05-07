@@ -34,4 +34,4 @@ export const USER_EDIT = 'USER_EDIT';
 // @var String
 export const AUTH_SET = 'AUTH_SET';
 // @var String
-// export const AUTH_CLR = 'AUTH_CLR';
+export const AUTH_CLR = 'AUTH_CLR';

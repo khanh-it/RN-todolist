@@ -14,7 +14,10 @@ import {
  * 
  */
 export function todoAdd(text, done = false, id = null) {
-    return { type: TODO_ADD, id, text, done };
+    return (dispatch, getState) => {
+        let { auth } = getState();
+        dispatch({ type: TODO_ADD, id, text, done, user_id: auth.id });
+    };
 }
 
 /**

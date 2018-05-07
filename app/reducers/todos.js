@@ -22,7 +22,6 @@ export default function todos(state = todos, action) {
         // TODO_ADD
         case TODO_ADD: {
             let todo = mTodo(action);
-            console.log('TODO_ADD: ', todo);
             state = state.concat([todo]);
         } break; // #end
         // TODO_DEL

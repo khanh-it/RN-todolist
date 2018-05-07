@@ -100,12 +100,12 @@ export default class AuthScreenHeader extends Component {
         <Body><Title>{navProps.title}</Title></Body>
         <Right>
           {buttons}
-          <Button
+          {/* <Button
             transparent
             onPress={() => navigation.navigate('/auth/forgot-password')}
           >
             <Icon type='Entypo' name='download' />
-          </Button>
+          </Button> */ }
         </Right>
       </Header>
       );

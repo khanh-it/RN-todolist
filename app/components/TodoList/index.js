@@ -18,20 +18,22 @@ import styles from './styles';
 /**
  * 
  */
-function visibleTodos(todos, filter) {
-    return todos;
+function visibleTodos({ todos, filter, auth }) {
+    let todosOfUser = [];
+    console.log('todos: ', todos, auth);
+    if (auth) {
+        todosOfUser = todos.filter(todo => (todo.user_id === auth.id));
+    }
+    return todosOfUser;
 }
 
 /**
  * @class TodoList
  */
 const TodoList = connect(
-    ({ todos, filter }) => {
-        // console.log('todos: ', todos);
-        return {
-            todos: visibleTodos(todos, filter),
-            filter
-        };
+    (state) => {
+        let { filter, auth } = state;
+        return { todos: visibleTodos(state), filter, auth };
     },
     (dispatch) => {
         return {

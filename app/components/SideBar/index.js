@@ -17,6 +17,9 @@ import {
   ListItem
 } from "native-base";
 
+// Models mapper(s)
+import UserMapper from '../../models/mappers/user';
+
 //
 let styles = StyleSheet.create({
   profileBox: {
@@ -56,7 +59,7 @@ export default class SideBar extends Component {
             >
               <Left><Icon name='home' /></Left>
               <Body>
-                <Text>Home</Text>
+                <Text>{global.Lang._('Home')}</Text>
               </Body>
             </ListItem>
             <ListItem
@@ -65,13 +68,22 @@ export default class SideBar extends Component {
             >
               <Left><Icon name='aperture' /></Left>
               <Body>
-                <Text>Profile</Text>
+                <Text>{global.Lang._('Profile')}</Text>
               </Body>
             </ListItem>
-            <ListItem icon>
+            <ListItem
+              icon
+              onPress={() => {
+                UserMapper.userSignOut();
+                // Redirect to Sign In screen
+                setTimeout(() => {
+                  navigation.navigate('/auth/sign-in');
+                });
+              }}
+            >
               <Left><Icon name='log-out' /></Left>
               <Body>
-                <Text>Sign Out</Text>
+                <Text>{global.Lang._('Sign Out')}</Text>
               </Body>
             </ListItem>
           </List>

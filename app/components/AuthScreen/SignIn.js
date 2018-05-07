@@ -16,22 +16,28 @@ import {
   Item,
   Label,
   Input,
-  View,
-  Text
+  Text,
+  Toast
 } from 'native-base';
 
 //
 import AuthScreenHeader from './Header';
+
+// Model Mapper(s)
+import UserMapper from '../../models/mappers/user';
 
 //
 let styles = StyleSheet.create({
   content: {
     // borderWidth: 1,
     // borderColor: 'red',
-    flex: 1,
-    flexDirection: 'row',
+  },
+  contentContainer: {
+    // borderWidth: 1,
+    // borderColor: 'blue',
+    flexGrow: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   form: {
     minWidth: 320,
@@ -49,8 +55,18 @@ let styles = StyleSheet.create({
 export default class SignIn extends Component {
     constructor() {
       super();
-      //
+      // Init state
       this.state = {};
+      // Bind method(s)
+      this.onSubmit = this.onSubmit.bind(this);
+    }
+
+    /**
+     * 
+     */
+    _data = {
+      username: '',
+      password: ''
     }
 
     /**
@@ -65,33 +81,71 @@ export default class SignIn extends Component {
         }
       };
     }
+
+    /**
+     * 
+     * @param {*} evt 
+     */
+    onSubmit(evt) {
+      // Verify input...
+      let data = this._data;
+      // 
+      if (!data.username.trim() || !data.password.trim()) {
+        Toast.showWarning(global.Lang._('Username and password are all required!'));
+        return;
+      }
+      // Login
+      let foundUser = UserMapper.findUser4Login(data.username, data.password, {
+        autoSignIn: true // auto login if success
+      });
+      if (!foundUser) {
+        Toast.showDanger(global.Lang._('Sign in has failed. Please check your username, password!'));
+        return;
+      }
+      // Redirect to home page?!
+      this.props.navigation.navigate('/');
+    }
   
     render() {
       return (
         <Container>
-          <View style={[styles.content]}>
+          <Content style={[styles.content]} contentContainerStyle={[styles.contentContainer]}>
             <Form style={[styles.form]}>
               <Item inlineLabel>
-                <Label>Username</Label>
-                <Input />
+                <Label>{global.Lang._('Username')}</Label>
+                <Input
+                  blurOnSubmit={true}
+                  maxLength={25}
+                  onChangeText={txt => (this._data.username = txt)}
+                />
               </Item>
               <Item inlineLabel>
-                <Label>Password</Label>
-                <Input />
+                <Label>{global.Lang._('Password')}</Label>
+                <Input
+                  secureTextEntry={true}
+                  blurOnSubmit={true}
+                  maxLength={25}
+                  onChangeText={txt => (this._data.password = txt)}
+                />
               </Item>
-              <Button full info style={[styles.btnSubmit]}>
-                <Text>SIGN IN</Text>
+              <Button
+                full
+                info
+                style={[styles.btnSubmit]}
+                onPress={this.onSubmit}
+              >
+                <Text>{global.Lang._('SIGN IN')}</Text>
               </Button>
               <Button full iconLeft style={[styles.btnSubmit]}>
                 <Icon name='logo-facebook' />
-                <Text>Facebook</Text>
+                <Text>{global.Lang._('Facebook')}</Text>
               </Button>
               <Button full iconLeft danger style={[styles.btnSubmit]}>
                 <Icon name='logo-google' />
-                <Text>Google+</Text>
+                <Text>{global.Lang._('Google+')}</Text>
               </Button>
             </Form>
-          </View>
+          </Content>
         </Container>
       );
     }
