@@ -10,6 +10,7 @@ import {
   StyleSheet
 } from 'react-native';
 import {
+  Root,
   Container,
   Header,
   Content,
@@ -17,7 +18,6 @@ import {
 } from 'native-base';
 //
 import RichTextInput from './app/components/RichTextInput';
-import RichTextInputMenu from './app/components/RichTextInput/Menu';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -30,11 +30,13 @@ const instructions = Platform.select({
 export default class App extends Component {
   render() {
     return (
-      <Container>
-        <Header />
-        <Content />
-        <RichTextInput />
-      </Container>
+      <Root>
+        <Container>
+          <Header />
+          <Content />
+          <RichTextInput />
+        </Container>
+      </Root>
     );
   }
 }

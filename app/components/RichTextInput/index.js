@@ -1,7 +1,10 @@
 import React, { PureComponent } from 'react';
 import {
     StyleSheet,
-    Animated
+    // Animations
+    Animated,
+    Easing
+    // #end
 } from 'react-native';
 import {
     Container,
@@ -23,66 +26,14 @@ import {
 } from 'native-base';
 
 // 
-// import Input from './Input';
-
-//
-let styles = StyleSheet.create({
-    //
-    noFlex: {
-        flex: 0
-    },
-    //
-    box: {
-        // borderWidth: 1, borderColor: 'red',
-        height: undefined,
-    },
-    //
-    // 
-    richTextInput: {
-        flex: 1,
-        flexDirection: 'row',
-        paddingTop: 3,
-        paddingBottom: 3
-    },
-    contentLeft: {},
-    contentBody: {
-        flex: 1,
-        flexGrow: 1,
-        flexDirection: 'row',
-        // borderWidth: 1,
-        // borderColor: 'red',
-    },
-    contentRight: {},
-    inputWrap: {
-        flex: 1,
-        borderRadius: 30,
-        backgroundColor: '#FFF'
-    },
-    input: {
-        // borderWidth: 1,
-        // borderColor: 'red',
-        borderTopLeftRadius: 30,
-        borderBottomLeftRadius: 30,
-    },
-
-    // list item
-    menu: {
-        flex: 1,
-        flexDirection: 'row',
-        flexWrap: 'wrap'
-    },
-    menuList: {
-        // flex: 1
-        width: '100%'
-    },
-    menuListItem: {
-
-    }
-    // #end
-});
-
+import RTIFeatures from './Features';
+import RTIGifs from './Gifs';
 //
 const AnimatedList = Animated.createAnimatedComponent(List);
+const AnimatedButton = Animated.createAnimatedComponent(Button);
+
+//
+import styles from './styles';
 
 /**
  * 
@@ -97,14 +48,25 @@ export default class RichTextInput extends PureComponent {
             menuList: true, // 
             height: new Animated.Value(0),
             // 
-            commonFeatures: false,
             moreFeatures: false
         }
+        //
+        this.spinValue = new Animated.Value(0);
         //
         this.startAnimation = this.startAnimation.bind(this);
     }
 
     startAnimation() {
+        // First set up animation 
+        Animated.timing(
+            this.spinValue,
+            {
+                toValue: 1,
+                duration: 3000,
+                easing: Easing.linear
+            }
+        ).start();
+        return;
         const { height, menuList } = this.state
 
         // Reset the value if needed
@@ -146,7 +108,7 @@ export default class RichTextInput extends PureComponent {
                     <Button
                         onPress={() => this.setState(() => ({ menu: 0 }))}
                     >
-                        <Icon ios='ios-keypad' android='md-keypad' />
+                        <Icon style={[styles.icon]} ios='ios-keypad' android='md-keypad' />
                     </Button>
                 </Left>
                 <Body>
@@ -164,73 +126,69 @@ export default class RichTextInput extends PureComponent {
 
     _rendeRichInpuText() {
         //
-        let { commonFeatures, moreFeatures } = this.state;
+        let { moreFeatures } = this.state;
+        let spin = this.spinValue.interpolate({
+            inputRange: [0, 1],
+            outputRange: ['0deg', '360deg'] 
+        });
 
         return (
-            <View style={[styles.richTextInput]}>
-                <Left style={[styles.noFlex]}>
-                    <Button
-                        onPress={() => this.setState(() => ({ menu: 1 }))}
+            <View style={[styles.richTextBox]}>
+                <RTIFeatures />
+                <View style={[styles.richTextInput]}>
+                    <AnimatedButton
+                        transparent light style={[styles.btnIcon, {transform: [{rotate: spin}] }]}
                     >
-                        <Icon ios='ios-list' android='md-list' />
-                    </Button>
-                    <Button
-                        onPress={() => this.setState(() => ({ menu: 1 }))}
-                    >
-                        <Icon ios='ios-list' android='md-list' />
-                    </Button>
-                </Left>
-                <Body style={[styles.contentBody]}>
-                    <Left style={[styles.noFlex]}>
-                        {!commonFeatures ? (
-                                <Button
-                                    onPress={() => this.setState(() => ({ commonFeatures: true }))}
-                                >
-                                    <Icon ios="ios-arrow-dropright-circle" android="md-arrow-dropright-circle" />
-                                </Button>
-                            ) : (
-                                <Button
-                                    onPress={() => this.setState(() => ({ commonFeatures: false }))}
-                                >
-                                    <Icon ios="ios-close-circle" android="md-close-circle" />
-                                </Button>
-                            )
-                        }
-                        {commonFeatures
-                            ? ([
-                                <Button
-                                    key='btn-01'
-                                >
-                                    <Icon ios="ios-camera" android="md-camera" />
-                                </Button>,
-                                <Button
-                                    key='btn-02'
-                                >
-                                    <Icon ios="ios-arrow-dropright-circle" android="md-arrow-dropright-circle" />
-                                </Button>
-                            ])
-                            : null
-                        }
-                    </Left>
-                    <Body style={[styles.contentBody]}>
-                        <Item regular style={[styles.inputWrap]}>
-                            <Input
-                                style={[styles.input]}
-                            />
+                        <Icon style={[styles.icon]} ios="ios-add-circle" android="md-add-circle" />
+                    </AnimatedButton>
+                    {!moreFeatures ? (
+                        <Button
+                            transparent light style={[styles.btnIcon]}
+                            onPress={() => this.setState(() => ({ moreFeatures: true }))}
+                        >
+                            <Icon style={[styles.icon]} ios="ios-add-circle" android="md-add-circle" />
+                        </Button>
+                        ) : (
                             <Button
-                                transparent
-                                dark
+                                transparent light style={[styles.btnIcon]}
+                                onPress={() => this.setState(() => ({ moreFeatures: false }))}
                             >
-                                <Icon ios="ios-happy" android="md-happy" />
+                                <Icon style={[styles.icon]} ios="ios-close-circle" android="md-close-circle" />
                             </Button>
-                        </Item>
-                    </Body>
-                </Body>
-                <Right style={[styles.noFlex]}>
-                    <Button>
-                        <Icon ios="ios-more" android="md-more" />
+                        )
+                    }
+                    <Button
+                        transparent light style={[styles.btnIcon]}
+                    >
+                        <Icon style={[styles.icon]} ios="ios-camera" android="md-camera" />
                     </Button>
-                </Right>
+                    <Button
+                        transparent light style={[styles.btnIcon]}
+                    >
+                        <Icon style={[styles.icon]} ios="ios-images" android="md-images" />
+                    </Button>
+                    <Button
+                        transparent light style={[styles.btnIcon]}
+                    >
+                        <Icon style={[styles.icon]} ios="ios-mic" android="md-mic" />
+                    </Button>
+                    <Item regular style={[styles.inputWrap]}>
+                        <Input
+                            style={[styles.input]}
+                        />
+                        <Button
+                            transparent dark
+                            style={[styles.btnIcon, styles.btnEmoji]}
+                        >
+                            <Icon style={[styles.icon]} ios="ios-happy" android="md-happy" />
+                        </Button>
+                    </Item>
+                    <Button
+                        transparent light style={[styles.btnIcon]}
+                    >
+                        <Icon style={[styles.icon]} ios="ios-thumbs-up" android="md-thumbs-up" />
+                    </Button>
+                </View>
             </View>
         );
     }
