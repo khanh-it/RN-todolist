@@ -47,10 +47,10 @@ let styles = StyleSheet.create({
         marginLeft: 0
     },
     input: {
-        // borderWidth: 1,
-        // borderColor: 'red',
         height: 40,
         fontSize: 15,
+        borderWidth: 1,
+        borderColor: 'white',
         borderTopLeftRadius: 30,
         borderBottomLeftRadius: 30,
     },
@@ -61,8 +61,8 @@ let styles = StyleSheet.create({
 
     },
     icon: {
-        marginLeft: 8,
-        marginRight: 8
+        marginLeft: 10,
+        marginRight: 10
     },
     // list item
     menu: {

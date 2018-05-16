@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import {
     StyleSheet,
+    Button as RNButton,
     // Animations
     Animated,
     Easing
@@ -48,10 +49,15 @@ export default class RichTextInput extends PureComponent {
             menuList: true, // 
             height: new Animated.Value(0),
             // 
-            moreFeatures: false
+            moreFeatures: false,
+            count: 0
         }
         //
         this.spinValue = new Animated.Value(0);
+        let spin = this.spinValue.interpolate({
+            inputRange: [0, 1],
+            outputRange: ['0deg', '360deg'] 
+        });
         //
         this.startAnimation = this.startAnimation.bind(this);
     }
@@ -77,7 +83,7 @@ export default class RichTextInput extends PureComponent {
     }
 
     componentDidMount() {
-        this.startAnimation();
+        // this.startAnimation();
     }
 
     _renderMenu() {
@@ -127,37 +133,34 @@ export default class RichTextInput extends PureComponent {
     _rendeRichInpuText() {
         //
         let { moreFeatures } = this.state;
-        let spin = this.spinValue.interpolate({
-            inputRange: [0, 1],
-            outputRange: ['0deg', '360deg'] 
-        });
 
         return (
             <View style={[styles.richTextBox]}>
-                <RTIFeatures />
+                <RTIFeatures key={new Date().getTime()} show={moreFeatures} />
+                <Text>{this.state.count}</Text>
                 <View style={[styles.richTextInput]}>
-                    <AnimatedButton
-                        transparent light style={[styles.btnIcon, {transform: [{rotate: spin}] }]}
-                    >
-                        <Icon style={[styles.icon]} ios="ios-add-circle" android="md-add-circle" />
-                    </AnimatedButton>
-                    {!moreFeatures ? (
-                        <Button
-                            transparent light style={[styles.btnIcon]}
-                            onPress={() => this.setState(() => ({ moreFeatures: true }))}
-                        >
-                            <Icon style={[styles.icon]} ios="ios-add-circle" android="md-add-circle" />
-                        </Button>
-                        ) : (
-                            <Button
-                                transparent light style={[styles.btnIcon]}
-                                onPress={() => this.setState(() => ({ moreFeatures: false }))}
-                            >
-                                <Icon style={[styles.icon]} ios="ios-close-circle" android="md-close-circle" />
-                            </Button>
-                        )
-                    }
                     <Button
+                        transparent light style={[styles.btnIcon /*, { transform: [{ rotate: spin }] } */]}
+                        onPress={() => this.setState((state) => ({
+                            moreFeatures: !state.moreFeatures,
+                            count: (state.count + 1)
+                        }))}
+                    >
+                        {moreFeatures ?
+                            (<Icon style={[styles.icon]} ios="ios-close-circle" android="md-close-circle" />)
+                            : (<Icon style={[styles.icon]} ios="ios-add-circle" android="md-add-circle" />)
+                        }
+                    </Button>
+                    <RNButton
+                        title='(C)'
+                        onPress={() => this.setState((state) => ({
+                            moreFeatures: !state.moreFeatures,
+                            count: (state.count + 1)
+                        }))}
+                    >
+                        <Icon name='home' /><Text>Count me</Text>
+                    </RNButton>
+                    {/* <Button
                         transparent light style={[styles.btnIcon]}
                     >
                         <Icon style={[styles.icon]} ios="ios-camera" android="md-camera" />
@@ -187,7 +190,7 @@ export default class RichTextInput extends PureComponent {
                         transparent light style={[styles.btnIcon]}
                     >
                         <Icon style={[styles.icon]} ios="ios-thumbs-up" android="md-thumbs-up" />
-                    </Button>
+                    </Button> */}
                 </View>
             </View>
         );
@@ -197,17 +200,10 @@ export default class RichTextInput extends PureComponent {
      * 
      */
     render() {
-        let { menu } = this.state;
-        let html = null;
-        if (menu) {
-            html = this._renderMenu();
-        } else {
-            html = this._rendeRichInpuText();
-        }
+        let { menu, moreFeatures, count } = this.state;
+        let html = menu ? this._renderMenu() : this._rendeRichInpuText();
         return (
-            <Footer style={[styles.box]}>
-                {html}
-            </Footer>
+            <Footer style={[styles.box]}>{html}</Footer>
         );
     }
 }

@@ -1,7 +1,11 @@
 import React, { PureComponent } from 'react';
 import {
     StyleSheet,
-    ScrollView
+    ScrollView,
+    // Animations
+    Animated,
+    Easing
+    // #end
 } from 'react-native';
 import {
     View,
@@ -12,9 +16,6 @@ import {
     ListItem,
 } from 'native-base';
 
-// 
-// import Input from './Input';
-
 //
 let styles = StyleSheet.create({
     // Menu
@@ -23,11 +24,35 @@ let styles = StyleSheet.create({
         // width: '100%',
         // position: 'absolute',
         // left: 0, bottom: 55,
-        backgroundColor: 'red',
-        borderWidth: 1, borderColor: 'blue'
+        // borderTopLeftRadius: 30,
+        // borderTopRightRadius: 30,
+        // backgroundColor: 'red',
+        borderWidth: 1, borderColor: '#F3F3F3'
     },
     wrap: {
-        height: 150
+        height: 150,
+        borderBottomWidth: 1,
+        borderBottomColor: '#F3F3F3'
+    },
+    scroll: {
+        
+    },
+    scrollContent: {
+        flexDirection: 'row'
+    },
+    feature: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingLeft: 16,
+        paddingRight: 16,
+        // borderWidth: 1, borderColor: 'blue'
+    },
+    icon: {
+        fontSize: 56,
+        color: 'white',
+    },
+    text: {
+        color: 'white',
     }
     // #end.Menu
 });
@@ -40,42 +65,99 @@ export default class RTIFeatures extends PureComponent {
     constructor(props) {
         super(props);
         // Init state
-        this.state = {}
+        // +++
+        const show = (typeof props.show === 'boolean') ? props.show : false;
+        this.state = { show };
+        // animations
+        this._animations = {
+            boxTiming: {
+                height: new Animated.Value(show ? 300 : 0)
+            }
+        };
+        // Bind method(s)
+        this.startAnimation = this.startAnimation.bind(this);
+    }
+
+    static getDerivedStateFromProps(nextProps, prevState) {
+        if (prevState.show !== nextProps.show) {
+            return nextProps;
+        }
+        return null;
+    }
+
+    componentDidMount() {
+        // this.startAnimation();
+    }
+
+    componentDidUpdate() {
+        // this.startAnimation();
+    }
+
+    startAnimation() {
+        let { show } = this.state;
+        //
+        /* this.state.animations.boxTiming = {
+            height: new Animated.Value(show ? 300 : 0)
+        }; */
+        let animationValue = this._animations.boxTiming.height;
+        let animationOpts = {
+            toValue: show ? 300 : 0,
+            duration: 256,
+            delay: 0,
+            // easing: Easing.inOut(Easing.ease)
+        };
+        // console.log('startAnimation#show: ', show, animationValue, animationOpts);
+        // First set up animation 
+        Animated.timing(animationValue, animationOpts).start();
     }
 
     /**
      * 
      */
     render() {
+        let { show } = this.state;
+        //
+        let features = (
+            <View style={[styles.wrap]}>
+                <ScrollView
+                    style={[styles.scroll]}
+                    contentContainerStyle={[styles.scrollContent]}
+                    horizontal={true}
+                >
+                    <View style={[styles.feature]}>
+                        <Icon style={[styles.icon]} ios="ios-add-circle" android="md-add-circle" />
+                        <Text style={[styles.text]}>Item 1.1</Text>
+                    </View>
+                    <View style={[styles.feature]}>
+                        <Icon style={[styles.icon]} ios="ios-add-circle" android="md-add-circle" />
+                        <Text style={[styles.text]}>Item 1.2</Text>
+                    </View>
+                    <View style={[styles.feature]}>
+                        <Icon style={[styles.icon]} ios="ios-add-circle" android="md-add-circle" />
+                        <Text style={[styles.text]}>Item 1.3</Text>
+                    </View>
+                    <View style={[styles.feature]}>
+                        <Icon style={[styles.icon]} ios="ios-add-circle" android="md-add-circle" />
+                        <Text style={[styles.text]}>Item 1.3</Text>
+                    </View>
+                    <View style={[styles.feature]}>
+                        <Icon style={[styles.icon]} ios="ios-add-circle" android="md-add-circle" />
+                        <Text style={[styles.text]}>Item 1.3</Text>
+                    </View>
+                    <View style={[styles.feature]}>
+                        <Icon style={[styles.icon]} ios="ios-add-circle" android="md-add-circle" />
+                        <Text style={[styles.text]}>Item 1.3</Text>
+                    </View>
+                </ScrollView>
+            </View>
+        );
         return (
-            <List style={[styles.box]}>
-                <ListItem style={[styles.wrap]}>
-                    <ScrollView style={[styles.scroll]}>
-                        <View>
-                            <Text>Item 1.1</Text>
-                        </View>
-                        <View>
-                            <Text>Item 1.2</Text>
-                        </View>
-                        <View>
-                            <Text>Item 1.3</Text>
-                        </View>
-                    </ScrollView>
-                </ListItem>
-                <ListItem style={[styles.wrap]}>
-                    <ScrollView>
-                        <View>
-                            <Text>Item 2.1</Text>
-                        </View>
-                        <View>
-                            <Text>Item 2.2</Text>
-                        </View>
-                        <View>
-                            <Text>Item 2.3</Text>
-                        </View>
-                    </ScrollView>
-                </ListItem>
-            </List>
+            <Animated.View
+                style={[styles.box, this._animations.boxTiming]}
+            >
+                {features}
+                {features}
+            </Animated.View>
         );
     }
 }
