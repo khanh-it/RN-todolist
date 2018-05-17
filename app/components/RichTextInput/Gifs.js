@@ -102,12 +102,12 @@ export default class RTIGifs extends PureComponent {
      */
     render() {
         let { gifs } = this.state;
-        console.log('gifs: ', gifs);
+        // console.log('gifs: ', gifs);
         let imgs = [];
         if (gifs.length) {
             gifs.forEach((uri, idx) => {
                 // imgs.push(<Text key={`img-${idx}`}>{idx}:{uri}</Text>);
-                if (idx <= 6) {
+                if (idx <= 1) {
                     imgs.push(<Image key={`img-${idx}`} source={{ uri }} style={[styles.img]} />);
                 }
                 /* return (idx <= 10) ? (

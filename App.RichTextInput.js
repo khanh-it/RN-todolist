@@ -7,14 +7,18 @@
 import React, { Component } from 'react';
 import {
   Platform,
-  StyleSheet
+  StyleSheet,
+  Button as RNButton
 } from 'react-native';
 import {
   Root,
   Container,
   Header,
   Content,
-  Footer
+  Footer,
+  Button,
+  Icon,
+  Text
 } from 'native-base';
 //
 import RichTextInput from './app/components/RichTextInput';
@@ -28,12 +32,34 @@ const instructions = Platform.select({
 
 // type Props = {};
 export default class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
   render() {
     return (
       <Root>
         <Container>
           <Header />
-          <Content />
+          <Content>
+            {/* <RNButton
+              title='Count me'
+              onPress={() => this.setState((state) => ({ count: ++state.count }))}
+            >
+              <Icon name='home' /><Text>Count me</Text>
+            </RNButton>
+            <Button
+              onPress={() => this.setState((state) => ({ count: ++state.count }))}
+            >
+              <Icon name='home' />
+              <Text>Count me</Text>
+            </Button>
+            <Text>{this.state.count}</Text> */}
+          </Content>
           <RichTextInput />
         </Container>
       </Root>

@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import {
     StyleSheet,
-    Button as RNButton,
     // Animations
     Animated,
     Easing
@@ -19,18 +18,15 @@ import {
     Input,
     Icon,
     Text,
-    FooterTab,
     Button,
-    Item,
-    List,
-    ListItem,
+    Item
 } from 'native-base';
 
 // 
 import RTIFeatures from './Features';
 import RTIGifs from './Gifs';
+import RTIDynamicContent from './DynamicContent';
 //
-const AnimatedList = Animated.createAnimatedComponent(List);
 const AnimatedButton = Animated.createAnimatedComponent(Button);
 
 //
@@ -44,35 +40,12 @@ export default class RichTextInput extends PureComponent {
     constructor(props) {
         super(props);
         // Init state
-        this.state = {
-            menu: 0, // <-- show menu as default,
-            menuList: true, // 
-            height: new Animated.Value(0),
-            // 
-            moreFeatures: false,
-            count: 0
-        }
-        //
-        this.spinValue = new Animated.Value(0);
-        let spin = this.spinValue.interpolate({
-            inputRange: [0, 1],
-            outputRange: ['0deg', '360deg'] 
-        });
-        //
+        this.state = {};
+        // Bind method(s)
         this.startAnimation = this.startAnimation.bind(this);
     }
 
     startAnimation() {
-        // First set up animation 
-        Animated.timing(
-            this.spinValue,
-            {
-                toValue: 1,
-                duration: 3000,
-                easing: Easing.linear
-            }
-        ).start();
-        return;
         const { height, menuList } = this.state
 
         // Reset the value if needed
@@ -86,81 +59,27 @@ export default class RichTextInput extends PureComponent {
         // this.startAnimation();
     }
 
-    _renderMenu() {
-        const { height } = this.state;
-        //
-        let menuList = (
-            <AnimatedList style={[styles.menuList, { height }]}>
-                <ListItem style={[styles.menuListItem]}>
-                    <Text>Item 1</Text>
-                </ListItem>
-                <ListItem style={[styles.menuListItem]}>
-                    <Text>Item 2</Text>
-                </ListItem>
-                <ListItem style={[styles.menuListItem]}>
-                    <Text>Item 3</Text>
-                </ListItem>
-                <ListItem style={[styles.menuListItem]}>
-                    <Text>Item 4</Text>
-                </ListItem>
-            </AnimatedList>
-        );
-        // #end
-
-        return (
-            <View style={[styles.menu]}>
-                {(this.state.menuList) ? menuList : null}
-                <Left style={[{ flex: 0 }]}>
-                    <Button
-                        onPress={() => this.setState(() => ({ menu: 0 }))}
-                    >
-                        <Icon style={[styles.icon]} ios='ios-keypad' android='md-keypad' />
-                    </Button>
-                </Left>
-                <Body>
-                    <Button
-                        onPress={() => {
-                            this.setState((state) => ({ menuList: !state.menuList }), this.startAnimation);
-                        }}
-                    >
-                        <Text>Menu</Text>
-                    </Button>
-                </Body>
-            </View>
-        );
-    }
-
     _rendeRichInpuText() {
         //
         let { moreFeatures } = this.state;
 
         return (
             <View style={[styles.richTextBox]}>
-                <RTIFeatures key={new Date().getTime()} show={moreFeatures} />
-                <Text>{this.state.count}</Text>
+                <RTIFeatures ref={ref => { this._refRTIFeatures = ref; }} />
                 <View style={[styles.richTextInput]}>
                     <Button
                         transparent light style={[styles.btnIcon /*, { transform: [{ rotate: spin }] } */]}
-                        onPress={() => this.setState((state) => ({
+                        onPress={() => this._refRTIFeatures.toggle() /* this.setState((state) => ({
                             moreFeatures: !state.moreFeatures,
                             count: (state.count + 1)
-                        }))}
+                        }))*/ }
                     >
                         {moreFeatures ?
                             (<Icon style={[styles.icon]} ios="ios-close-circle" android="md-close-circle" />)
                             : (<Icon style={[styles.icon]} ios="ios-add-circle" android="md-add-circle" />)
                         }
                     </Button>
-                    <RNButton
-                        title='(C)'
-                        onPress={() => this.setState((state) => ({
-                            moreFeatures: !state.moreFeatures,
-                            count: (state.count + 1)
-                        }))}
-                    >
-                        <Icon name='home' /><Text>Count me</Text>
-                    </RNButton>
-                    {/* <Button
+                    <Button
                         transparent light style={[styles.btnIcon]}
                     >
                         <Icon style={[styles.icon]} ios="ios-camera" android="md-camera" />
@@ -178,10 +97,15 @@ export default class RichTextInput extends PureComponent {
                     <Item regular style={[styles.inputWrap]}>
                         <Input
                             style={[styles.input]}
+                            ref={ref => { this._refNBInput = ref; }}
                         />
                         <Button
                             transparent dark
                             style={[styles.btnIcon, styles.btnEmoji]}
+                            onPress={() => {
+                                this._refNBInput._root.blur();
+                                this._refRTIDynamicContent.toggle()
+                            }}
                         >
                             <Icon style={[styles.icon]} ios="ios-happy" android="md-happy" />
                         </Button>
@@ -190,8 +114,9 @@ export default class RichTextInput extends PureComponent {
                         transparent light style={[styles.btnIcon]}
                     >
                         <Icon style={[styles.icon]} ios="ios-thumbs-up" android="md-thumbs-up" />
-                    </Button> */}
+                    </Button>
                 </View>
+                <RTIDynamicContent ref={ref => { this._refRTIDynamicContent = ref; }} />
             </View>
         );
     }
@@ -200,10 +125,10 @@ export default class RichTextInput extends PureComponent {
      * 
      */
     render() {
-        let { menu, moreFeatures, count } = this.state;
-        let html = menu ? this._renderMenu() : this._rendeRichInpuText();
         return (
-            <Footer style={[styles.box]}>{html}</Footer>
+            <Footer style={[styles.box]}>
+                {this._rendeRichInpuText()}
+            </Footer>
         );
     }
 }

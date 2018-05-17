@@ -11,9 +11,7 @@ import {
     View,
     Icon,
     Text,
-    Button,
-    List,
-    ListItem,
+    Button
 } from 'native-base';
 
 //
@@ -75,6 +73,7 @@ export default class RTIFeatures extends PureComponent {
             }
         };
         // Bind method(s)
+        this.toggle = this.toggle.bind(this);
         this.startAnimation = this.startAnimation.bind(this);
     }
 
@@ -85,9 +84,7 @@ export default class RTIFeatures extends PureComponent {
         return null;
     }
 
-    componentDidMount() {
-        // this.startAnimation();
-    }
+    componentDidMount() {}
 
     componentDidUpdate() {
         // this.startAnimation();
@@ -101,14 +98,21 @@ export default class RTIFeatures extends PureComponent {
         }; */
         let animationValue = this._animations.boxTiming.height;
         let animationOpts = {
-            toValue: show ? 300 : 0,
-            duration: 256,
+            toValue: show ? 'auto' : 0,
+            duration: 512,
             delay: 0,
-            // easing: Easing.inOut(Easing.ease)
+            easing: Easing.inOut(Easing.ease)
         };
         // console.log('startAnimation#show: ', show, animationValue, animationOpts);
         // First set up animation 
         Animated.timing(animationValue, animationOpts).start();
+    }
+
+    toggle() {
+        // let { show } = this.state;
+        // this.setState({ show: !show });
+        this.state.show = !this.state.show;
+        this.startAnimation();
     }
 
     /**
@@ -123,40 +127,68 @@ export default class RTIFeatures extends PureComponent {
                     style={[styles.scroll]}
                     contentContainerStyle={[styles.scrollContent]}
                     horizontal={true}
+                    showsHorizontalScrollIndicator={false} 
+                    showsVerticalScrollIndicator={false}
+                    ref={ref => {
+                        this._refScrollView = ref;
+                    }}
                 >
-                    <View style={[styles.feature]}>
+                    <Button
+                        style={[styles.feature]}
+                        onPress={() => {
+                            this._refScrollView.scrollToEnd();
+                        }}
+                    >
                         <Icon style={[styles.icon]} ios="ios-add-circle" android="md-add-circle" />
                         <Text style={[styles.text]}>Item 1.1</Text>
-                    </View>
-                    <View style={[styles.feature]}>
+                    </Button>
+                    <Button
+                        style={[styles.feature]}
+                        onPress={() => alert('touched')}
+                    >
                         <Icon style={[styles.icon]} ios="ios-add-circle" android="md-add-circle" />
                         <Text style={[styles.text]}>Item 1.2</Text>
-                    </View>
-                    <View style={[styles.feature]}>
+                    </Button>
+                    <Button
+                        style={[styles.feature]}
+                        onPress={() => alert('touched')}
+                    >
                         <Icon style={[styles.icon]} ios="ios-add-circle" android="md-add-circle" />
                         <Text style={[styles.text]}>Item 1.3</Text>
-                    </View>
-                    <View style={[styles.feature]}>
+                    </Button>
+                    <Button
+                        style={[styles.feature]}
+                        onPress={() => alert('touched')}
+                    >
                         <Icon style={[styles.icon]} ios="ios-add-circle" android="md-add-circle" />
                         <Text style={[styles.text]}>Item 1.3</Text>
-                    </View>
-                    <View style={[styles.feature]}>
+                    </Button>
+                    <Button
+                        style={[styles.feature]}
+                        onPress={() => alert('touched')}
+                    >
                         <Icon style={[styles.icon]} ios="ios-add-circle" android="md-add-circle" />
                         <Text style={[styles.text]}>Item 1.3</Text>
-                    </View>
-                    <View style={[styles.feature]}>
+                    </Button>
+                    <Button
+                        style={[styles.feature]}
+                        onPress={() => alert('touched')}
+                    >
                         <Icon style={[styles.icon]} ios="ios-add-circle" android="md-add-circle" />
                         <Text style={[styles.text]}>Item 1.3</Text>
-                    </View>
+                    </Button>
                 </ScrollView>
             </View>
         );
         return (
             <Animated.View
                 style={[styles.box, this._animations.boxTiming]}
+                onLayout={event => {
+                    console.log('layout: ', event.nativeEvent.layout);
+                }}
             >
                 {features}
-                {features}
+                {/* features */}
             </Animated.View>
         );
     }

@@ -19,6 +19,7 @@
     "preset": "react-native"
   },
   "dependencies": {
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "locutus": "^2.0.9",
     "native-base": "^2.4.2",
     "react": "16.3.1",
