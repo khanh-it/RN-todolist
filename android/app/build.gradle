@@ -153,6 +153,16 @@ dependencies {
     // Provide the Android support library (you might already have this or a similar dependency)
     // implementation 'com.android.support:support-core-utils:24.2.1'
     // #end
+    // https://github.com/react-native-community/react-native-camera
+    compile (project(':react-native-camera')) {
+        exclude group: "com.android.support"
+        exclude group: "com.google.android.gms"
+        compile 'com.android.support:exifinterface:27.+'
+        compile ('com.google.android.gms:play-services-vision:12.0.1') {
+            force = true
+        }
+    }
+    // #end
 }
 
 // Run this once to be able to run the application with BUCK

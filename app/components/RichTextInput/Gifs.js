@@ -2,34 +2,26 @@ import React, { PureComponent } from 'react';
 import {
     StyleSheet,
     ScrollView,
-    Image,
-    Text
-} from 'react-native';
-import {
-    Container,
-    Head,
-    Content,
-    Footer,
-    Left,
-    Right,
-    Body,
+    FlatList,
     View,
-    Input,
-    Icon,
-    // Text,
-    FooterTab,
-    Button,
-    Item,
-    List,
-    ListItem,
-} from 'native-base';
+    TouchableOpacity,
+    Image,
+    ImageBackground,
+    Text,
+    ActivityIndicator
+} from 'react-native';
+// import {} from 'native-base';
 
 /**
  * 
  * @param {*} cb 
  */
-function fetchGifs(cb) {
-    return fetch(fetchGifs.url, {
+function fetchGifs(cb, options = {}) {
+    let url = fetchGifs.url
+        + ('?limit=' + (options.limit || '').toString().trim())
+        + ('&page=' + (options.page || '').toString().trim())
+    ;
+    return fetch(url, {
             method: 'GET',
             // mode: "no-cors",
             headers: {
@@ -46,37 +38,68 @@ function fetchGifs(cb) {
         // .catch(err => { console.log('err: ', err); return err; })
     ;
 }
-fetchGifs.url = 'http://10.11.8.92/RN/API/';
+fetchGifs.url = 'http://10.11.8.92/RN/rn_TodoList/API/';
 
 //
 let styles = StyleSheet.create({
     box: {
         borderWidth: 1, borderColor: 'red',
-        height: 120,
+        height: 130,
         padding: 10
     },
     scroll: {
         // flex: 1,
         // flexDirection: 'row',
-        borderWidth: 1, borderColor: 'green'
+        borderWidth: 1, borderColor: 'green',
     },
-    wrapper: {
+    scrollContent: {
         // flex: 1,
-        flexDirection: 'row',
-        borderWidth: 1, borderColor: 'yellow'
+        // flexDirection: 'row',
+        borderWidth: 2, borderColor: 'red',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     imgItem: {
-        height: 100,
-        width: 100,
-        marginRight: 10,
-        borderWidth: 2, borderColor: 'red',
+        height: '100%',
+        width: 128,
+        marginRight: 8,
+        borderWidth: 1, borderColor: 'red',
     },
     img: {
-        height: 100,
-        width: 100,
-        marginRight: 10
+        height: '100%', width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 });
+
+class Gif extends PureComponent {
+
+    componentDidMount() {
+        // console.log('componentDidMount');
+    }
+
+    render() {
+        let { dI } = this.props;
+        return (
+            <View style={[styles.imgItem]}>
+                <TouchableOpacity
+                    onPress={() => alert(dI.item)}
+                >
+                    <ImageBackground
+                        source={{ uri: dI.item }}
+                        style={[styles.img]}
+                        onLoad={(event) => {
+                            this._refActivityIndicator.setNativeProps({ display: 'none' });
+                            delete this._refActivityIndicator;
+                        }}
+                    >
+                        <ActivityIndicator large color={'pink'} ref={ref => { this._refActivityIndicator = ref; }} />
+                    </ImageBackground>
+                </TouchableOpacity>
+            </View>
+        );
+    }
+}
 
 /**
  * 
@@ -87,46 +110,93 @@ export default class RTIGifs extends PureComponent {
         super(props);
         // Init state
         this.state = {
-            gifs: []
-        }
-        //
-        fetchGifs(gifs => {
-            this.setState(() => ({ gifs }));
-        });
+            limit: '', // items count per page (uses server's default);
+            page: 1, // current page
+            gifs: [],
+            fetchEnd: false
+        };
     }
 
-    componentDidMount() {}
+    /**
+     * 
+     */
+    _fetchGifs() {
+        let { limit, page, fetchEnd } = this.state;
+        //
+        fetchGifs((gifs) => {
+                fetchEnd = (gifs.length <= 0);
+                gifs = this.state.gifs.concat(gifs);
+                ++page;
+                //
+                this.setState({ gifs, page, fetchEnd });
+            }
+            , { limit, page }
+        );
+    }
+
+    componentDidMount() {
+        this._fetchGifs();
+    }
 
     /**
      * 
      */
     render() {
-        let { gifs } = this.state;
-        // console.log('gifs: ', gifs);
-        let imgs = [];
-        if (gifs.length) {
-            gifs.forEach((uri, idx) => {
-                // imgs.push(<Text key={`img-${idx}`}>{idx}:{uri}</Text>);
-                if (idx <= 1) {
-                    imgs.push(<Image key={`img-${idx}`} source={{ uri }} style={[styles.img]} />);
-                }
-                /* return (idx <= 10) ? (
-                    <Image key={`img-${idx}`} source={{ uri }} height={100} width={100} style={[styles.imgg]} />
-                ) : null */
-            })
-        }
+        let { gifs, fetchEnd } = this.state;
+        console.log('render: ', fetchEnd);
         return (
             <View style={[styles.box]}>
-                <ScrollView
+                <FlatList
+                    ref={ref => { this._refFlatList = ref; }}
                     style={[styles.scroll]}
-                    contentContainerStyle={[styles.wrapper]}
+                    contentContainerStyle={[styles.scrollContent]}
                     horizontal={true}
-                    pagingEnabled={true}
-                >
-                    {/* <View style={[styles.wrapper]}> */}
-                    {imgs.length ? imgs : (<Text>Loading...</Text>)}
-                    {/* </View> */}
-                </ScrollView>
+                    showsHorizontalScrollIndicator={false} 
+                    showsVerticalScrollIndicator={false}
+                    // pagingEnabled={true}
+                    // ListHeaderComponent={(<ActivityIndicator size="large" color="#00ff00" />)}
+                    ListFooterComponent={fetchEnd ? null : (<ActivityIndicator size="large" color="#00ff00" />)}
+                    // ListEmptyComponent={(<ActivityIndicator size="large" color="#0000ff" />)}
+                    data={gifs}
+                    extraData={this.state}
+                    keyExtractor={(item, index) => {
+                        return `FlatItem-${index}`;
+                    }}
+                    renderItem={(dI) => {
+                        let ele = (<Gif dI={dI} />);
+                        return ele;
+                    }}
+                    onEndReached={(info) => {
+                        this._onEndReachedInfo = info; console.log('onEndReached: ', info);
+                    }}
+                    /* onScroll={(event) => {
+                        console.log('onScroll: ', event.nativeEvent.contentOffset, event.nativeEvent.layoutMeasurement);
+                    }}
+                    onMomentumScrollBegin={(event) => {
+                        console.log('onMomentumScrollBegin: ', event.nativeEvent.contentOffset, event.nativeEvent.layoutMeasurement);
+                    }}
+                    onMomentumScrollEnd={(event) => {
+                        console.log('onMomentumScrollEnd: ', event.nativeEvent.contentOffset, event.nativeEvent.layoutMeasurement);
+                    }} */
+                    /* onScrollBeginDrag={(event) => {
+                        console.log('onScrollBeginDrag: ', event.nativeEvent.contentOffset, event.nativeEvent.layoutMeasurement);
+                    }} */
+                    onScrollEndDrag={(event) => {
+                        let { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
+                        let distanceFromEnd = contentSize.width - layoutMeasurement.width;
+                        // Scroll to end?
+                        // console.log('onScrollEndDrag:', event.nativeEvent);
+                        if (!fetchEnd && (distanceFromEnd - contentOffset.x) <= 10) {
+                            // console.log('onScrollDrag End:', event.nativeEvent.contentOffset, event.nativeEvent.layoutMeasurement);
+                            this._fetchGifs();
+                        }
+                        // Scroll to start?
+                        if (contentOffset.x  <= 10) {
+                            console.log('onScrollDrag Start:', event.nativeEvent.contentOffset, event.nativeEvent.layoutMeasurement);
+                        }
+                    }}
+                    // onEndReachedThreshold={10}
+                />
             </View>
         );
     }

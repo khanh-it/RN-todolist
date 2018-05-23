@@ -14,6 +14,7 @@ import {
 
 //
 import RTIGifs from './Gifs';
+import RTIEmojis from './Emojis';
 
 //
 let styles = StyleSheet.create({
@@ -50,9 +51,10 @@ let styles = StyleSheet.create({
     // content
     content: {
         // borderWidth: 1, borderColor: 'white',
-        minHeight: 150
+        height: 150
     },
     contentItem: {
+        height: '100%'
     },
     contentActive: {
     },
@@ -78,14 +80,14 @@ export default class RTIDynamicContent extends PureComponent {
         // Init state
         const show = (typeof props.show === 'boolean') ? props.show : false;
         this.state = {
-            show, tab: 'gifs' // gifs | emojis | stickers
+            show, tab: 'stickers' // gifs | emojis | stickers
         };
 
         // Animations
         this._animations = {
             boxTiming: {
-                height: new Animated.Value(0),
-                opacity: new Animated.Value(0)
+                // height: new Animated.Value(0),
+                // opacity: new Animated.Value(0)
             }
         };
 
@@ -121,7 +123,7 @@ export default class RTIDynamicContent extends PureComponent {
                 duration: 256, // delay: 0,
                 // easing: Easing.inOut(Easing.ease)
             })
-        ]).start();
+        ]);//.start();
     }
 
     toggle() {
@@ -148,7 +150,7 @@ export default class RTIDynamicContent extends PureComponent {
         if (tab === 'emojis') {
             contentHtml = (
                 <View style={[styles.contentItem, styles.contentEmojis]}>
-                    <Text>Emojis content</Text>
+                    <RTIEmojis />
                 </View>
             );
         }
@@ -170,7 +172,7 @@ export default class RTIDynamicContent extends PureComponent {
                         style={[styles.tab, styles.tabGifs, (tab === 'gifs') ? styles.tabActive : null]}
                         onPress={() => this.switchTab('gifs')}
                     >
-                        <Text>Gifs</Text>
+                        <Text>Gif(s)</Text>
                     </Button>
                     <Button
                         transparent small bordered light dark={(tab === 'emojis')}

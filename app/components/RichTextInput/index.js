@@ -3,8 +3,9 @@ import {
     StyleSheet,
     // Animations
     Animated,
-    Easing
+    Easing,
     // #end
+    CameraRoll
 } from 'react-native';
 import {
     Container,
@@ -81,6 +82,19 @@ export default class RichTextInput extends PureComponent {
                     </Button>
                     <Button
                         transparent light style={[styles.btnIcon]}
+                        onPress={evt => {
+                            // CameraRoll.saveToCameraRoll('file:///sdcard/img.png');
+                            CameraRoll.getPhotos({
+                                first: 20,
+                                assetType: 'Photos',
+                              })
+                              .then(r => {
+                                this.setState({ photos: r.edges });
+                              })
+                              .catch((err) => {
+                                 //Error Loading Images
+                              });
+                        }}
                     >
                         <Icon style={[styles.icon]} ios="ios-camera" android="md-camera" />
                     </Button>

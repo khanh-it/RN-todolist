@@ -8,7 +8,11 @@ import React, { Component } from 'react';
 import {
   Platform,
   StyleSheet,
-  Button as RNButton
+  Button as RNButton,
+  CameraRoll,
+  View,
+  ScrollView,
+  Image
 } from 'react-native';
 import {
   Root,
@@ -36,8 +40,33 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0
+      count: 0,
+      photos: []
     };
+  }
+
+  _handleButtonPress() {
+    CameraRoll.getPhotos({
+        first: 20,
+        assetType: 'Photos',
+      })
+      .then(r => {
+        console.log('getPhotos: ', r);
+        this.setState({ photos: r.edges });
+      })
+      .catch((err) => {
+         //Error Loading Images
+      })
+    ;
+  }
+
+  _handleSaveToCameraRoll() {
+    CameraRoll.saveToCameraRoll('file:///img.png')
+      .then(r => {
+        console.log('saveToCameraRoll: ', r);
+      })
+      .catch(console.log)
+    ;
   }
 
   render() {
@@ -46,19 +75,34 @@ export default class App extends Component {
         <Container>
           <Header />
           <Content>
-            {/* <RNButton
-              title='Count me'
-              onPress={() => this.setState((state) => ({ count: ++state.count }))}
-            >
-              <Icon name='home' /><Text>Count me</Text>
-            </RNButton>
-            <Button
-              onPress={() => this.setState((state) => ({ count: ++state.count }))}
-            >
-              <Icon name='home' />
-              <Text>Count me</Text>
-            </Button>
-            <Text>{this.state.count}</Text> */}
+            <View>
+              <Button
+                warning
+                onPress={this._handleSaveToCameraRoll}>
+                <Text>Save to camera roll</Text>
+              </Button>
+            </View>
+            <View>
+              <Button
+                danger
+                onPress={this._handleButtonPress}>
+                <Text>Load Images</Text>
+              </Button>
+              <ScrollView>
+                {this.state.photos.map((p, i) => {
+                return (
+                  <Image
+                    key={i}
+                    style={{
+                      width: 300,
+                      height: 100,
+                    }}
+                    source={{ uri: p.node.image.uri }}
+                  />
+                );
+              })}
+              </ScrollView>
+            </View>
           </Content>
           <RichTextInput />
         </Container>
